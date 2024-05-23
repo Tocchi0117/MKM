@@ -1,3 +1,8 @@
+コントローラーの対応
+
+https://hakonebox.hatenablog.com/entry/2018/04/15/125152
+
+
 効果音の収集(フリー音源)
 
 https://on-jin.com/sound/index.php
