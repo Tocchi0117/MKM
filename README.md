@@ -26,3 +26,7 @@ https://programming.sincoston.com/unity-change-loudness-distance/
 https://00m.in/wZbip
 
 https://www.ame-name.com/archives/127
+
+VRMモーション作成
+
+https://yuyu-log.com/vrm-animation/#google_vignette
