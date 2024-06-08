@@ -30,3 +30,9 @@ https://www.ame-name.com/archives/127
 VRMモーション作成
 
 https://yuyu-log.com/vrm-animation/#google_vignette
+
+Input Systemに関する設定、操作方法
+
+https://nekojara.city/unity-input-system-press-button
+
+https://nekojara.city/unity-input-system-get-down-up
