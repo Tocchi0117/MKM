@@ -31,6 +31,8 @@ VRMモーション作成
 
 https://yuyu-log.com/vrm-animation/#google_vignette
 
+rigidbody移動方法
+https://tech.pjin.jp/blog/2016/11/04/unity_skill_5/
 Input Systemに関する設定、操作方法
 
 https://nekojara.city/unity-input-system-press-button
