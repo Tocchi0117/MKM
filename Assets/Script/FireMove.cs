@@ -8,10 +8,12 @@ public class FireMove : MonoBehaviour
 
     public static bool flag;
 
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -35,7 +37,8 @@ public class FireMove : MonoBehaviour
             }
             else
             {
-                transform.Translate(Vector3.forward * Time.deltaTime * V);
+                //transform.Translate(Vector3.forward * Time.deltaTime * V);
+                rb.velocity = Vector3.forward * V;
             }
         }
     }
@@ -44,6 +47,8 @@ public class FireMove : MonoBehaviour
     {
         var v = V;
         V = 0;
+        rb.velocity = Vector3.zero;
+
         if (!flag)
         {
             yield return new WaitForSeconds(dtime);

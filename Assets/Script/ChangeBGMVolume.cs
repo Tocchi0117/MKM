@@ -23,11 +23,4 @@ public class ChangeBGMVolume : MonoBehaviour
         PlayerPrefs.SetFloat("BGM_Volume", newSliderValue);
         PlayerPrefs.Save();
     }
-
-
-
-
-
-
-
 }

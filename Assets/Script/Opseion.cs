@@ -26,12 +26,41 @@ public class Opseion : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("joystick button 7") || Input.GetKeyDown(KeyCode.Tab))
+        if (ControllerManager.MenuTrigger)
         {
             pause();
         }
 
-        selectedObj = eventsystem.currentSelectedGameObject.gameObject;
+        if(ControllerManager.CancelTrigger)
+        {
+            if (UI[0].activeSelf)
+            {
+                pause();
+            }
+            else
+            {
+                ChangeUI_01();
+            }
+        }
+
+
+        try
+        {
+            selectedObj = eventsystem.currentSelectedGameObject.gameObject;
+        }
+        catch
+        {
+            if (UI[0].activeSelf)
+            {
+                SelectButton[0].Select();
+            }
+            else
+            {
+                SelectButton[1].Select();
+            }
+        }
+
+
         Arrow.transform.position = selectedObj.transform.position;
     }
 
@@ -61,6 +90,7 @@ public class Opseion : MonoBehaviour
 
         }
     }
+
     void pause_sub()
     {
         for (int i = 0; i < UI.Length; i++)

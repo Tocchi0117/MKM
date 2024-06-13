@@ -3,32 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class CharaCon : MonoBehaviour
 {
     public GameObject maincamera;
-    public Animator anim;
     public float IdouSpeed, RotateSpeed;
 
-    float cy,Vr=100;
+    float py, cy, Vr = 100, tmp;
 
     //コントローラの取得
-    float LaxisH = 0.0f;
-    float LaxisV = 0.0f;
-    float RaxisH = 0.0f;
-    float RaxisV = 0.0f;
-    float DpadH = 0.0f;
-    float DpadV = 0.0f;
-    float LRTrigger = 0.0f;
+    float LStickX = 0.0f;
+    float LStickY = 0.0f;
+    float RStickX = 0.0f;
 
-
+    public static bool push;
     bool flag;
+
     Renderer renderComponent1;
     Renderer renderComponent2;
     Renderer renderComponent3;
 
-    float py, tmp;
-
+    Animator anim;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +34,9 @@ public class CharaCon : MonoBehaviour
         renderComponent1 = transform.Find("Body").gameObject.GetComponent<Renderer>();
         renderComponent2 = transform.Find("Face").gameObject.GetComponent<Renderer>();
         renderComponent3 = transform.Find("Hair").gameObject.GetComponent<Renderer>();
+
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -45,29 +46,26 @@ public class CharaCon : MonoBehaviour
         {
             Contoroller_input();
 
-            IDOU();
-            KaiTen();
-
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+            //「ボタン」モーション中以外
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("ボタン"))
             {
-                anim.SetFloat("Speed", 1);
+                IDOU();
+                KaiTen();
             }
-            else
+            CameraKaiTen();
+
+            anim.SetFloat("Speed", max(LStickX, LStickY));
+
+            if(Event_Panel.stanby && ControllerManager.PushTrigger)
             {
-                anim.SetFloat("Speed", max(LaxisH, LaxisV));
+                anim.Play("ボタン");
+                rb.velocity = Vector3.zero;
             }
         }
     }
 
-
     private void OnCollisionEnter(Collision other)
     {
-        /*
-        if (other.gameObject.tag != "ground")
-        {
-            StartCoroutine(Blink());
-        }*/
-
         if (other.gameObject.tag == "Respawn") 
         {
             transform.position = new Vector3(0, 0, 0);
@@ -75,60 +73,45 @@ public class CharaCon : MonoBehaviour
     }
 
 
-
-
-
-
-
     void Contoroller_input()
     {
-        LaxisH = Input.GetAxisRaw("LStickH");
-        LaxisV = Input.GetAxisRaw("LStickV");
-        RaxisH = Input.GetAxisRaw("RStickH");
-        RaxisV = Input.GetAxisRaw("RStickV");
-        DpadH = Input.GetAxisRaw("DPadH");
-        DpadV = Input.GetAxisRaw("DPadV");
-        LRTrigger = Input.GetAxisRaw("LRTrigger");
+        LStickX = ControllerManager.LStickX;
+        LStickY = ControllerManager.LStickY;
+        RStickX = ControllerManager.RStickX;
     }
 
-    void IDOU()
+    public void IDOU()
     {
-        if (LaxisV != 0 || LaxisH != 0)
+        if (LStickX != 0 || LStickY != 0)
         {
-            //anim.SetBool("Walk bool", true);
-            transform.Translate(Vector3.forward * Time.deltaTime * IdouSpeed * max(LaxisH, LaxisV));
+            //transform.Translate(Vector3.forward * Time.deltaTime * IdouSpeed * max(LStickX, LStickY));
 
-            if (LRTrigger > 0 || Input.GetKey(KeyCode.LeftShift))
+            // カメラの方向から、X-Z平面の単位ベクトルを取得
+            Vector3 cameraForward = Vector3.Scale(maincamera.transform.forward, new Vector3(1, 0, 1)).normalized;
+
+            // 方向キーの入力値とカメラの向きから、移動方向を決定
+            Vector3 moveForward = cameraForward * LStickY + maincamera.transform.right * LStickX;
+
+            // 移動方向にスピードを掛ける。ジャンプや落下がある場合は、別途Y軸方向の速度ベクトルを足す。
+            rb.velocity = moveForward * IdouSpeed + new Vector3(0, rb.velocity.y, 0);
+
+
+            if (ControllerManager.DashTrigger)
             {
                 anim.Play("走り");
-                transform.Translate(Vector3.forward * Time.deltaTime * IdouSpeed * max(LaxisH, LaxisV) * 2);
+                rb.velocity = moveForward * IdouSpeed * 3 + new Vector3(0, rb.velocity.y, 0);
             }
-            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("直立") || anim.GetCurrentAnimatorStateInfo(0).IsName("走り"))
+            else if (!anim.GetCurrentAnimatorStateInfo(0).IsName("歩き"))
             {
                 anim.Play("歩き");
             }
-        }/*
-        else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
-        {
-            //anim.SetBool("Walk bool", true);
-            transform.Translate(Vector3.forward * Time.deltaTime * IdouSpeed);
-
-            if (Input.GetKey("joystick button 5") || Input.GetKey(KeyCode.LeftShift))
-            {
-                anim.Play("走り");
-                transform.Translate(Vector3.forward * Time.deltaTime * IdouSpeed * 2);
-            }
-            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("直立"))
-            {
-                anim.Play("歩き");
-            }
-        }*/
+        }
         else
         {
-            //anim.SetBool("Walk bool", false);
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("歩き") || anim.GetCurrentAnimatorStateInfo(0).IsName("走り"))
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("直立"))
             {
                 anim.Play("直立");
+                rb.velocity = Vector3.zero;
             }
         }
 
@@ -137,9 +120,9 @@ public class CharaCon : MonoBehaviour
 
     void KaiTen()
     {
-        py = Mathf.Atan2(LaxisH, LaxisV) * Mathf.Rad2Deg + maincamera.transform.localEulerAngles.y;
+        py = Mathf.Atan2(LStickX, LStickY) * Mathf.Rad2Deg + maincamera.transform.localEulerAngles.y;
 
-        if (LaxisV != 0 || LaxisH != 0)
+        if (LStickX != 0 || LStickY != 0)
         {
             tmp = py;
         }
@@ -149,47 +132,13 @@ public class CharaCon : MonoBehaviour
         }
 
         transform.rotation = Quaternion.Euler(0, py, 0);
+    }
 
-
-         cy += Time.deltaTime * RaxisH * Vr;
-
-        /*
-        if (Input.GetKeyDown("joystick button 4") && Input.GetKeyDown("joystick button 5")){
-            cy = transform.localEulerAngles.y;
-        }*/
+    void CameraKaiTen()
+    {
+        cy += Time.deltaTime * RStickX * Vr;
 
         maincamera.transform.rotation = Quaternion.Euler(0, cy, 0);
-
-
-
-
-        /*
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.forward = Vector3.Slerp(transform.forward, maincamera.transform.right, Time.deltaTime * RotateSpeed);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.forward = Vector3.Slerp(transform.forward, -maincamera.transform.right, Time.deltaTime * RotateSpeed);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.forward = Vector3.Slerp(transform.forward, maincamera.transform.forward, Time.deltaTime * RotateSpeed);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.forward = Vector3.Slerp(transform.forward, -maincamera.transform.forward, Time.deltaTime * RotateSpeed);
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            cy += Time.deltaTime * Vr;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            cy -= Time.deltaTime * Vr;
-        }
-        */
     }
 
     float max(float a, float b)
@@ -197,16 +146,22 @@ public class CharaCon : MonoBehaviour
         return Mathf.Sqrt(a * a + b * b);
     }
 
+    //アニメーションの指定したタイミングから参照する
+    void buttonPush()
+    {
+        push=true;
+        Debug.Log("呼び出し完了");
+        Event_Panel.PanelSousa();
+        Sound_SE.playsound(0, 4);
+    }
 
     private void OnParticleCollision(GameObject other)
     {
         if (other.gameObject.tag == "Fire")
         {
-            StartCoroutine("Blink");
+            StartCoroutine(Blink());
         }
     }
-
-
 
     IEnumerator Blink()
     {
