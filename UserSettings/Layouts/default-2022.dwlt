@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 342.66666
     width: 749.3333
     height: 476.66666
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 449.33325
     height: 819.3333
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -676,9 +676,9 @@ MonoBehaviour:
       floating: 1
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 387.3333, y: 156.66664}
+      snapOffset: {x: -244, y: -138.66667}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 3
       id: UnityEditor.SceneViewCameraOverlay
       index: 0
       layout: 4
@@ -710,6 +710,19 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: UnityEditor.SceneViewCameraOverlay (0)
+      index: 9
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: d84e4667ebf022b4aa49067591070266
   m_Gizmos: 1
@@ -721,9 +734,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8.5840845, y: 7.2218904, z: 75.80986}
+    m_Target: {x: 8.939104, y: 4.164914, z: 48.304012}
     speed: 2
-    m_Value: {x: 8.5840845, y: 7.2218904, z: 75.80986}
+    m_Value: {x: 8.939104, y: 4.164914, z: 48.304012}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -773,9 +786,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.027488165, y: -0.025549445, z: 0.00063331967, w: 0.9992954}
   m_Size:
-    m_Target: 10.4406395
+    m_Target: 1.8837903
     speed: 2
-    m_Value: 10.4406395
+    m_Value: 1.8837903
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -909,21 +922,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1efbffff8c670000
+      m_ExpandedIDs: 38e3fdff0ae4fdffdce4fdffaee5fdff7ce6fdff3ce7fdff96e9fdffb8e9fdffa8eafdfffed8ffff66710000a8720000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Qtext
-        m_OriginalName: Qtext
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 27226
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -993,9 +1006,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 606f0000
-    m_LastClickedID: 28512
-    m_ExpandedIDs: 00000000926e0000946e0000966e0000986e00009a6e00009c6e00009e6e000000ca9a3b
+    m_SelectedIDs: 64770000
+    m_LastClickedID: 30564
+    m_ExpandedIDs: 00000000162700002227000046270000bc760000be760000c0760000c276000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1023,7 +1036,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000926e0000946e0000966e0000986e00009a6e00009c6e00009e6e0000
+    m_ExpandedIDs: 00000000162700002227000046270000bc760000be760000c0760000c2760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1075,7 +1088,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 797.3334}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 163.99998

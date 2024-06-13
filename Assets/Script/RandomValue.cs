@@ -8,40 +8,41 @@ public class RandomValue : MonoBehaviour
     public int maxValue;
     public int numberOfValuesToGenerate;
 
-    int cnt = 0;
-    int[] index;
-    public GameObject[] obj;
+    public GameObject[] Q;
+    public GameObject panel;
+    public static int[] index;
+
+    bool flag;
 
     void Start()
     {
-        setRandomNum();
+        //setRandomNum();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && cnt<obj.Length)
+        if(panel.GetComponent<EventPanel>().flag)
         {
-            obj[index[cnt]].SetActive(true);
-            cnt++;
+            if (!flag)
+            {
+                flag = true;
+
+                setRandomNum();
+                for (int i = 0; i < Q.Length; i++)
+                {
+                    Q[i].GetComponent<Question>().question = index[i];
+                }
+            }
         }
-
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+        else
         {
-            cnt = 0;
-            setRandomNum();
+            flag = false;
         }
     }
 
 
     void setRandomNum()
     {
-        index = new int[numberOfValuesToGenerate];
-        for (int i = 0; i < numberOfValuesToGenerate; i++)
-        {
-            obj[i].SetActive(false);
-        }
-
         if (maxValue - minValue + 1 < numberOfValuesToGenerate)
         {
             Debug.LogError("Range of values is smaller than the number of values to generate.");
@@ -57,12 +58,14 @@ public class RandomValue : MonoBehaviour
             generatedValues.Add(randomValue);
         }
 
+        int cnt = 0;
+        index = new int[generatedValues.Count];
+
         foreach (int value in generatedValues)
         {
-            Debug.Log(value);
+            //Debug.Log(value);
             index[cnt] = value;
             cnt++;
         }
-        cnt = 0;
     }
 }

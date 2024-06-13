@@ -6,29 +6,35 @@ using UnityEngine;
 public class Answer_maru : MonoBehaviour
 {
     [HideInInspector] public bool correct;
-    public GameObject batu;
-    bool start;
+    public GameObject eventPanel, batu;
+    bool open, close;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Collider>().isTrigger = false;
+        gameObject.GetComponent<BoxCollider>().isTrigger = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Event_Panel.eventFlag)
+        if (eventPanel.GetComponent<EventPanel>().flag)
         {
-            if (!start)
+            if (!open)
             {
+                open = true;
+                close = false;
                 gameObject.GetComponent<BoxCollider>().isTrigger = true;
             }
         }
         else
         {
-            gameObject.GetComponent<BoxCollider>().isTrigger = false;
-            start = false;
+            if (!close)
+            {
+                open = false;
+                close = true;
+                gameObject.GetComponent<BoxCollider>().isTrigger = false;
+            }
         }
     }
 
@@ -46,9 +52,8 @@ public class Answer_maru : MonoBehaviour
                 Debug.Log("ïsê≥â");
                 Sound_SE.playsound(0, 3);
             }
-            batu.gameObject.GetComponent<Collider>().isTrigger = false;
-            gameObject.GetComponent<Collider>().isTrigger = false;
-            start = true;
+            batu.gameObject.GetComponent<BoxCollider>().isTrigger = false;
+            gameObject.GetComponent<BoxCollider>().isTrigger = false;
         }
     }
 }

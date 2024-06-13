@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 8146050817521635506}
   m_Layer: 0
   m_Name: EventPanel
-  m_TagString: Finish
+  m_TagString: EventPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   prism: {fileID: 5513995615665328797}
   mat1: {fileID: 2100000, guid: e3d4fca987338f7409c35c6c2ce001a2, type: 2}
   mat2: {fileID: 2100000, guid: 296b3c557b9595f48880ce582866a156, type: 2}
+  flag: 0
 --- !u!1 &5513995615665328797
 GameObject:
   m_ObjectHideFlags: 0

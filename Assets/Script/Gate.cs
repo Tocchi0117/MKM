@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
+    public GameObject eventPanel;
     public GameObject fire;
     Vector3 posi;
 
-    bool start;
+    bool open, close;
 
     // Start is called before the first frame update
     void Start()
@@ -20,20 +21,27 @@ public class Gate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Event_Panel.eventFlag)
+        if (eventPanel.GetComponent<EventPanel>().flag)
         {
-            if(!start)
+            if(!open)
             {
+                open = true;
+                close = false;
                 gameObject.GetComponent<BoxCollider>().isTrigger = true;
             }
         }
         else
         {
-            fire.SetActive(false);
-            gameObject.GetComponent<BoxCollider>().isTrigger = false;
-            FireMove.flag = false;
-            start = false;
-            fire.transform.position = posi;
+            if (!close)
+            {
+                fire.SetActive(false);
+                FireMove.flag = false;
+                fire.transform.position = posi;
+
+                open = false;
+                close = true;
+                gameObject.GetComponent<BoxCollider>().isTrigger = false;
+            }
         }
     }
 
@@ -49,9 +57,8 @@ public class Gate : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Sound_SE.playsound(0, 0);
             gameObject.GetComponent<BoxCollider>().isTrigger = false;
-            start = true;
-            Sound_SE.playsound(0,0);
         }
     }
 }

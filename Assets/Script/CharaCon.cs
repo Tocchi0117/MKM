@@ -28,6 +28,10 @@ public class CharaCon : MonoBehaviour
     Animator anim;
     Rigidbody rb;
 
+
+
+    [HideInInspector]public GameObject tmpPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,13 +60,16 @@ public class CharaCon : MonoBehaviour
 
             anim.SetFloat("Speed", max(LStickX, LStickY));
 
-            if(Event_Panel.stanby && ControllerManager.PushTrigger)
+            if(EventPanel.stanby && ControllerManager.PushTrigger)
             {
                 anim.Play("ボタン");
                 rb.velocity = Vector3.zero;
             }
         }
     }
+
+
+
 
     private void OnCollisionEnter(Collision other)
     {
@@ -71,6 +78,27 @@ public class CharaCon : MonoBehaviour
             transform.position = new Vector3(0, 0, 0);
         }
     }
+
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EventPanel")
+        {
+            tmpPanel = other.GameObject();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "EventPanel")
+        {
+            tmpPanel = null;
+        }
+    }
+
+
+
 
 
     void Contoroller_input()
@@ -146,14 +174,20 @@ public class CharaCon : MonoBehaviour
         return Mathf.Sqrt(a * a + b * b);
     }
 
+
+
+
     //アニメーションの指定したタイミングから参照する
     void buttonPush()
     {
         push=true;
         Debug.Log("呼び出し完了");
-        Event_Panel.PanelSousa();
+        tmpPanel.GetComponent<EventPanel>().PanelSousa();
         Sound_SE.playsound(0, 4);
     }
+
+
+
 
     private void OnParticleCollision(GameObject other)
     {
@@ -163,13 +197,16 @@ public class CharaCon : MonoBehaviour
         }
     }
 
+
+
+
     IEnumerator Blink()
     {
         if (!flag)
         {
+            flag = true;
             for (int i = 0; i < 5; i++)
             {
-                flag = true;
                 renderComponent1.enabled = !renderComponent1.enabled;
                 renderComponent2.enabled = !renderComponent2.enabled;
                 renderComponent3.enabled = !renderComponent3.enabled;

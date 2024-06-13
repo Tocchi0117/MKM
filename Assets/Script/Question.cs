@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class Question : MonoBehaviour
 {
-    public GameObject[] Q;
-    public GameObject[] A;
-    public Text test;
-    public TextAsset QA;
-    public float time;
-    public int question;
+    public GameObject[] Q;  //問題文を表示する際に必要
+    public GameObject[] A;  //２択の正解を設定するために必要
+    public Text test;       //問題文を表示する場所
+    public TextAsset QA;    //問題文
+    public float time;      //文字送りの速さ
 
-    List<string[]>Qtxt=new List<string[]>();
+    [HideInInspector] public int question;
+    [HideInInspector] public List<string[]>Qtxt=new List<string[]>();
 
     bool flag;
 
@@ -31,7 +31,7 @@ public class Question : MonoBehaviour
             Q[i].SetActive(false);
         }
 
-        Debug.Log(Qtxt.Count);
+        //Debug.Log(Qtxt.Count);
     }
 
     // Update is called once per frame
@@ -78,6 +78,7 @@ public class Question : MonoBehaviour
         if (!flag)
         {
             flag = true;
+            test.text = "";
             for (int i = 0; i < text.Length; i++)
             {
                 if (text[i].ToString() == @"\")
@@ -92,6 +93,7 @@ public class Question : MonoBehaviour
 
                 yield return new WaitForSeconds(time);
             }
+            flag = false;
         }
     }
 }

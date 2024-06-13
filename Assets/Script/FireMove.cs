@@ -5,8 +5,10 @@ using UnityEngine;
 public class FireMove : MonoBehaviour
 {
     public float V, dtime;
+    float tmp;
 
     public static bool flag;
+    bool f;
 
     Rigidbody rb;
 
@@ -14,6 +16,7 @@ public class FireMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        tmp = V;
     }
 
     // Update is called once per frame
@@ -37,7 +40,7 @@ public class FireMove : MonoBehaviour
             }
             else
             {
-                //transform.Translate(Vector3.forward * Time.deltaTime * V);
+                V= tmp;
                 rb.velocity = Vector3.forward * V;
             }
         }
@@ -45,18 +48,23 @@ public class FireMove : MonoBehaviour
 
     private IEnumerator restart()
     {
-        var v = V;
-        V = 0;
-        rb.velocity = Vector3.zero;
-
-        if (!flag)
+        if (!f)
         {
+            f = true;
+
+            V = 0;
+            rb.velocity = Vector3.zero;
+
+            if (!flag)
+            {
+                yield return new WaitForSeconds(dtime);
+                flag = true;
+            }
             yield return new WaitForSeconds(dtime);
-            flag = true;
+            V = tmp;
+            Fire.flag = false;
+
+            f = false;
         }
-        yield return new WaitForSeconds(dtime);
-        V = v;
-        Fire.flag = false;
-        StopCoroutine("restart");
     }
 }

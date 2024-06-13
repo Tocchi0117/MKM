@@ -380,7 +380,7 @@
 "Assets/Script/ControlerActions.cs"
 "Assets/Script/ControllerActions.cs"
 "Assets/Script/ControllerManager.cs"
-"Assets/Script/Event_Panel.cs"
+"Assets/Script/EventPanel.cs"
 "Assets/Script/Fire.cs"
 "Assets/Script/FireMove.cs"
 "Assets/Script/Gate.cs"

@@ -23,11 +23,11 @@ public class Change_Color : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(t < 1 && Event_Panel.eventFlag)
+        if(t < 1 && GetComponent<Gate>().eventPanel.GetComponent<EventPanel>().flag)
         {
             t += Time.deltaTime * 0.8f;
         }
-        if (t > 0 && !Event_Panel.eventFlag)
+        if (t > 0 && !GetComponent<Gate>().eventPanel.GetComponent<EventPanel>().flag)
         {
             t -= Time.deltaTime * 0.8f;
         }

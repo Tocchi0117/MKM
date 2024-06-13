@@ -67,10 +67,10 @@
     <Compile Include="Assets\Script\MoveP.cs" />
     <Compile Include="Assets\Script\ControllerManager.cs" />
     <Compile Include="Assets\Script\Sound_BGM.cs" />
+    <Compile Include="Assets\Script\EventPanel.cs" />
     <Compile Include="Assets\Script\FireMove.cs" />
     <Compile Include="Assets\Script\Gate.cs" />
     <Compile Include="Assets\Script\Sound_SE.cs" />
-    <Compile Include="Assets\Script\Event_Panel.cs" />
     <Compile Include="Assets\Script\Answer_maru.cs" />
     <Compile Include="Assets\Script\Change_Color.cs" />
     <Compile Include="Assets\Script\ChangeSEVolume.cs" />
