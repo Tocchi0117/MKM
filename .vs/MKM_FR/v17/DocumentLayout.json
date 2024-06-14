@@ -3,19 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|c:\\users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\mkm_fr\\assets\\script\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\assets\\script\\gate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|c:\\users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\mkm_fr\\assets\\script\\answer_maru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\answer_maru.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|c:\\users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\mkm_fr\\assets\\script\\answer_batu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\assets\\script\\answer_batu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\answer_batu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|c:\\users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\mkm_fr\\assets\\script\\gate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|c:\\users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\mkm_fr\\assets\\script\\firemove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\assets\\script\\firemove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10A4AFBA-381F-4C58-9A2B-49BEAFB330FE}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\firemove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -46,11 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Result.cs",
+              "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Result.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Result.cs",
+              "ToolTip": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Result.cs",
+              "RelativeToolTip": "Assets\\Script\\Result.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T08:15:10.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Answer_batu.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Answer_batu.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Answer_batu.cs",
@@ -58,12 +75,11 @@
               "RelativeToolTip": "Assets\\Script\\Answer_batu.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAswBwAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T08:12:38.664Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-14T08:12:38.664Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Answer_maru.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Answer_maru.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Answer_maru.cs",
@@ -76,20 +92,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Gate.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Gate.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Gate.cs",
               "ToolTip": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Gate.cs",
               "RelativeToolTip": "Assets\\Script\\Gate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAFAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAIwDcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-14T05:27:55.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Fire.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Fire.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Fire.cs",
@@ -97,12 +113,11 @@
               "RelativeToolTip": "Assets\\Script\\Fire.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T18:19:17.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T18:19:17.633Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FireMove.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\FireMove.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\FireMove.cs",
@@ -110,12 +125,11 @@
               "RelativeToolTip": "Assets\\Script\\FireMove.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T18:18:24.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T18:18:24.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "EventPanel.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\EventPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EventPanel.cs",
@@ -123,12 +137,11 @@
               "RelativeToolTip": "Assets\\Script\\EventPanel.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAIwDYAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T17:24:22.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T17:24:22.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "RandomValue.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\RandomValue.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\RandomValue.cs",
@@ -140,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Question.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\Question.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Question.cs",
@@ -152,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CharaCon.cs",
               "DocumentMoniker": "C:\\Users\\toshi\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\\u3044\u308D\u3044\u308D\\\u30B2\u30FC\u30E0\u958B\u767A\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\\MKM_FR\\Assets\\Script\\CharaCon.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CharaCon.cs",
