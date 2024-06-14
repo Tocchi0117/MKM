@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\Fire.cs" />
     <Compile Include="Assets\Script\Answer_batu.cs" />
     <Compile Include="Assets\Script\MoveP.cs" />
+    <Compile Include="Assets\Script\Result.cs" />
     <Compile Include="Assets\Script\ControllerManager.cs" />
     <Compile Include="Assets\Script\Sound_BGM.cs" />
     <Compile Include="Assets\Script\EventPanel.cs" />

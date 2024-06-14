@@ -390,6 +390,7 @@
 "Assets/Script/Opseion.cs"
 "Assets/Script/Question.cs"
 "Assets/Script/RandomValue.cs"
+"Assets/Script/Result.cs"
 "Assets/Script/Sound_BGM.cs"
 "Assets/Script/Sound_SE.cs"
 "Assets/Script/ViewQ.cs"

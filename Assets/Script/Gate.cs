@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,15 @@ public class Gate : MonoBehaviour
 {
     public GameObject eventPanel;
     public GameObject fire;
-    Vector3 posi;
+    public bool start, goal;
 
+
+    Vector3 posi;
     bool open, close;
+
+    static  DateTime STime;
+
+    public static float time;
 
     // Start is called before the first frame update
     void Start()
@@ -45,19 +52,26 @@ public class Gate : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            fire.SetActive(true);
-        }
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Sound_SE.playsound(0, 0);
+            if (start)
+            {
+                fire.SetActive(true);
+                Sound_SE.playsound(0, 0);
+
+                STime = DateTime.Now;
+            }
+
+            if (goal)
+            {
+                fire.SetActive(false);
+                Sound_SE.playsound(0, 0);
+
+                time = (float)(DateTime.Now - STime).TotalSeconds;
+            }
+
             gameObject.GetComponent<BoxCollider>().isTrigger = false;
         }
     }

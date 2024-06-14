@@ -50,6 +50,10 @@ public class EventPanel : MonoBehaviour
     {
         prism.transform.position = new Vector3(prism.transform.position.x, priposi_y + Mathf.Sin(Time.time * 2) * 0.1f, prism.transform.position.z);
         prism.transform.rotation = Quaternion.Euler(180, cnt += 2.5f, 0);
+        if (cnt >= 360)
+        {
+            cnt = 0;
+        }
     }
 
 

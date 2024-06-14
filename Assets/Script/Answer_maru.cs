@@ -9,6 +9,8 @@ public class Answer_maru : MonoBehaviour
     public GameObject eventPanel, batu;
     bool open, close;
 
+    public static int cnt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class Answer_maru : MonoBehaviour
                 open = true;
                 close = false;
                 gameObject.GetComponent<BoxCollider>().isTrigger = true;
+                cnt = 0;
             }
         }
         else
@@ -46,6 +49,7 @@ public class Answer_maru : MonoBehaviour
             {
                 Debug.Log("ê≥â");
                 Sound_SE.playsound(0, 2);
+                cnt++;
             }
             else
             {
