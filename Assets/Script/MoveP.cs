@@ -1,139 +1,225 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MoveP : MonoBehaviour
 {
     [Header("移動速度")]
-    public Vector3 _velocity;
-    Vector3 tmp_v;
+    public Vector3 velocity;
 
     [Header("移動距離")]
-    public Vector3 end;
+    public Vector3 distance;
 
-    Vector3 strat;
-
-    [Header("移動方向")]
-    public bool x;
-    public bool y;
-    public bool z;
-
-    [Header("ループ")]
-    public bool LoopFlag_x;
-    public bool LoopFlag_y;
-    public bool LoopFlag_z;
-
+    [Header("移動方法")]
+    [Header("通常")]
+    public bool nomalX;
+    public bool nomalY;
+    public bool nomalZ;
+    [Header("繰返")]
+    public bool loopX;
+    public bool loopY;
+    public bool loopZ;
+    Vector3 Fpos;
     [Header("往復")]
-    public bool OhukuFlag_x;
-    public bool OhukuFlag_y;
-    public bool OhukuFlag_z;
+    public bool roundX;
+    public bool roundY;
+    public bool roundZ;
+    Vector3 Reverse;
+    bool X, Y, Z;
 
-    bool Ohuku;
-
-    float Posi_x, Posi_y, Posi_z;
-
+    float speed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //初期値設定
-        strat = transform.position;
-        Posi_x = strat.x;
-        Posi_y = strat.y;
-        Posi_z = strat.z;
-    }
+        Fpos = transform.localPosition;
+        Reverse = transform.localPosition - distance;
+        distance += transform.localPosition;
+}
 
     // Update is called once per frame
     void Update()
     {
-        // 速度_velocityで移動する
-        if (x)
-        {
-            Posi_x = MovePosition(transform.position.x, strat.x, end.x, _velocity.x);
-        }
-        if (y)
-        {
-            Posi_y = MovePosition(transform.position.y, strat.y, end.y, _velocity.y);
-        }
-        if (z)
-        {
-            Posi_z = MovePosition(transform.position.z, strat.z, end.z, _velocity.z);
-        }
+        speed = Time.deltaTime;
 
+        HowToMove();
 
-        //繰り返し
-        if (LoopFlag_x)
-        {
-            Posi_x = LoopPosition(transform.position.x, strat.x, end.x, _velocity.x);
-        }
-        if (LoopFlag_y)
-        {
-            Posi_y = LoopPosition(transform.position.y, strat.y, end.y, _velocity.y);
-        }
-        if (LoopFlag_z)
-        {
-            Posi_z = LoopPosition(transform.position.z, strat.z, end.z, _velocity.z);
-        }
-
-
-        //往復
-        if (OhukuFlag_x)
-        {
-            Posi_x = OhukuPosition(transform.position.x, strat.x, end.x, _velocity.x);
-        }
-        if (OhukuFlag_y)
-        {
-            Posi_y = OhukuPosition(transform.position.y, strat.y, end.y, _velocity.y);
-        }
-        if (OhukuFlag_z)
-        {
-            Posi_z = OhukuPosition(transform.position.z, strat.z, end.z, _velocity.z);
-        }
-
-
-        transform.position = new Vector3(Posi_x, Posi_y, Posi_z);
+        nomalMove();
+        loopMove();
+        roundMove();
     }
 
-    float OhukuPosition(float P, float Ps, float Pe, float V)
+    void nomalMove()
     {
-        if (Ohuku)
+        if (nomalX)
         {
-            P += V * Time.deltaTime;
-            if (P > Ps + Pe)
+            if (judge(distance.x, transform.localPosition.x, Fpos.x))
             {
-                Ohuku = false;
+                transform.Translate(Vector3.right * speed * velocity.x);
             }
+        }
+        if (nomalY)
+        {
+            if (judge(distance.y, transform.localPosition.y, Fpos.y))
+            {
+                transform.Translate(Vector3.up * speed * velocity.y);
+            }
+        }
+        if (nomalZ)
+        {
+            if (judge(distance.z, transform.localPosition.z, Fpos.z))
+            {
+                transform.Translate(Vector3.forward * speed * velocity.z);
+            }
+        }
+    }
+
+    void loopMove()
+    {
+        if (loopX)
+        {
+            if (judge(distance.x, transform.localPosition.x, Fpos.x))
+            {
+                transform.Translate(Vector3.right * speed * velocity.x);
+            }
+            else
+            {
+                transform.localPosition = new Vector3(Fpos.x, transform.localPosition.y, transform.localPosition.z);
+            }
+        }
+        if (loopY)
+        {
+            if (judge(distance.y, transform.localPosition.y, Fpos.y))
+            {
+                transform.Translate(Vector3.up * speed * velocity.y);
+            }
+            else
+            {
+                transform.localPosition = new Vector3(transform.localPosition.x, Fpos.y, transform.localPosition.z);
+            }
+        }
+        if (loopZ)
+        {
+            if (judge(distance.z, transform.localPosition.z, Fpos.z))
+            {
+                transform.Translate(Vector3.forward * speed * velocity.z);
+            }
+            else
+            {
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, Fpos.z);
+                Debug.Log("ここ？");
+            }
+        }
+    }
+
+    void roundMove()
+    {
+        if (roundX)
+        {
+            if (!X && judge(distance.x, transform.localPosition.x, Fpos.x))
+            {
+                transform.Translate(Vector3.right * speed * velocity.x);
+            }
+            else
+            {
+                X = true;
+            }
+
+            if (X && judge(Reverse.x, transform.localPosition.x, Fpos.x))
+            {
+                transform.Translate(Vector3.right * speed * -velocity.x);
+            }
+            else
+            {
+                X = false;
+            }
+        }
+        if (roundY)
+        {
+            if (!Y && judge(distance.y, transform.localPosition.y, Fpos.y))
+            {
+                transform.Translate(Vector3.up * speed * velocity.y);
+            }
+            else
+            {
+                Y = true;
+            }
+
+            if (Y && judge(Reverse.y, transform.localPosition.y, Fpos.y))
+            {
+                transform.Translate(Vector3.up * speed * -velocity.y);
+            }
+            else
+            {
+                Y = false;
+            }
+        }
+        if (roundZ)
+        {
+            if (!Z && judge(distance.z, transform.localPosition.z, Fpos.z))
+            {
+                transform.Translate(Vector3.forward * speed * velocity.z);
+            }
+            else
+            {
+                Z = true;
+            }
+
+            if (Z && judge(Reverse.z, transform.localPosition.z, Fpos.z))
+            {
+                transform.Translate(Vector3.forward * speed * -velocity.z);
+            }
+            else
+            {
+                Z = false;
+            }
+        }
+    }
+
+    bool judge(float dis, float pos, float Fp)
+    {
+        if (dis - Fp < 0)
+        {
+            return dis - pos < 0;
         }
         else
         {
-            P += V * Time.deltaTime * -1;
-            if (P < Ps)
-            {
-                Ohuku = true;
-            }
+            return dis - pos > 0;
         }
-        return P;
     }
 
-    float LoopPosition(float P, float Ps, float Pe, float V)
-    {
-        if (P < Ps + Pe)
-        {
-            P += V * Time.deltaTime;
-        }
-        else
-        {
-            P = Ps;
-        }
-        return P;
-    }
 
-    float MovePosition(float P, float Ps, float Pe, float V)
+    void HowToMove()
     {
-        if (P < Ps + Pe)
+        if (nomalX)
         {
-            P += V * Time.deltaTime;
+            loopX = false;
+            roundX = false;
         }
-        return P;
+        else if(loopX)
+        {
+            roundX = false;
+        }
+
+        if (nomalY)
+        {
+            loopY = false;
+            roundY = false;
+        }
+        else if (loopY)
+        {
+            roundY = false;
+        }
+
+        if (nomalZ)
+        {
+            loopZ = false;
+            roundZ = false;
+        }
+        else if (loopZ)
+        {
+            roundZ = false;
+        }
     }
 }

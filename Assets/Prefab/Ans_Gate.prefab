@@ -1133,6 +1133,7 @@ MonoBehaviour:
   correct: 0
   eventPanel: {fileID: 0}
   maru: {fileID: 7300185463775100451}
+  jama: {fileID: 0}
 --- !u!1 &7047207449136177574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   correct: 0
   eventPanel: {fileID: 0}
   batu: {fileID: 6019002874759570761}
+  jama: {fileID: 0}
 --- !u!1 &8096579027479739405
 GameObject:
   m_ObjectHideFlags: 0

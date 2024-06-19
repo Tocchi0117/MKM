@@ -60,7 +60,7 @@ public class MoveS : MonoBehaviour
     {
         if (localScale < Max && !flag)
         {
-            Se += Ve;
+            Se += Ve * Time.deltaTime;
         }
         else
         {
@@ -72,7 +72,7 @@ public class MoveS : MonoBehaviour
             {
                 if (localScale > Min)
                 {
-                    Se -= Ve;
+                    Se -= Ve * Time.deltaTime;
                     flag = true;
                 }
                 else

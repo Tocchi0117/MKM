@@ -20,6 +20,7 @@ public class Question : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //txtƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
         StringReader reader = new StringReader(QA.text);
         while (reader.Peek() != -1)
         {
@@ -30,8 +31,6 @@ public class Question : MonoBehaviour
         {
             Q[i].SetActive(false);
         }
-
-        //Debug.Log(Qtxt.Count);
     }
 
     // Update is called once per frame

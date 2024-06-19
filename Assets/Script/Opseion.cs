@@ -31,7 +31,7 @@ public class Opseion : MonoBehaviour
             pause();
         }
 
-        if(ControllerManager.CancelTrigger)
+        if (ControllerManager.CancelTrigger && Time.timeScale == 0)
         {
             if (UI[0].activeSelf)
             {

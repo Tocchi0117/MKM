@@ -6,7 +6,7 @@ using UnityEngine;
 public class Answer_batu : MonoBehaviour
 {
     [HideInInspector] public bool correct;
-    public GameObject eventPanel,maru;
+    public GameObject eventPanel, maru, jama;
     bool open, close;
 
     public static int cnt;
@@ -15,6 +15,7 @@ public class Answer_batu : MonoBehaviour
     void Start()
     {
         gameObject.GetComponent<BoxCollider>().isTrigger = false;
+        jama.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class Answer_batu : MonoBehaviour
                 open = false;
                 close = true;
                 gameObject.GetComponent<BoxCollider>().isTrigger = false;
+                jama.SetActive(false);
             }
         }
     }
@@ -55,6 +57,7 @@ public class Answer_batu : MonoBehaviour
             {
                 Debug.Log("ïsê≥â");
                 Sound_SE.playsound(0, 3);
+                jama.SetActive(true);
             }
             maru.gameObject.GetComponent<BoxCollider>().isTrigger = false;
             gameObject.GetComponent<BoxCollider>().isTrigger = false;

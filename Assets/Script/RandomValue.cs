@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class RandomValue : MonoBehaviour
 {
+    [Header("ƒ‰ƒ“ƒ_ƒ€¶¬")]
     public int minValue;
     public int maxValue;
     public int numberOfValuesToGenerate;
 
+    [Header("MKM_FR")]
     public GameObject[] Q;
     public GameObject panel;
     public static int[] index;

@@ -13,7 +13,7 @@ public class Gate : MonoBehaviour
     Vector3 posi;
     bool open, close;
 
-    static  DateTime STime;
+    static DateTime STime;
 
     public static float time;
 

@@ -10,7 +10,7 @@ public class EventPanel : MonoBehaviour
 
     public static bool stanby;
 
-    float cnt = 0, priposi_y;
+    float priposi_y;
 
 
     [HideInInspector] public bool flag;
@@ -49,11 +49,7 @@ public class EventPanel : MonoBehaviour
     void prismMove()
     {
         prism.transform.position = new Vector3(prism.transform.position.x, priposi_y + Mathf.Sin(Time.time * 2) * 0.1f, prism.transform.position.z);
-        prism.transform.rotation = Quaternion.Euler(180, cnt += 2.5f, 0);
-        if (cnt >= 360)
-        {
-            cnt = 0;
-        }
+        prism.transform.rotation = Quaternion.Euler(180, Time.time * 50, 0);
     }
 
 
